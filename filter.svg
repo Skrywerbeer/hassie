@@ -1,0 +1,22 @@
+<svg id="filters" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+	<filter id="glow">
+	  <feColorMatrix
+		in="SourceGraphic"
+		type="matrix"
+		values="4 0 0 0 0
+				0 4 0 0 0
+				0 0 4 0 0
+				0 0 0 1 0"
+		/>
+	  <feGaussianBlur
+		in="result"
+		stdDeviation="10"
+		/>
+	  <feMerge>
+		<feMergeNode in="result" />
+		<feMergeNode in="SourceGraphic" />
+	  </feMerge>
+	</filter>
+  </defs>
+</svg>

@@ -150,6 +150,7 @@ output.counter {
 
 #keys button.selected {
 	border:solid 8px chocolate;
+	filter: url("filter.svg#glow");
 }
 
 #keys button.selected math mn {
