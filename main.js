@@ -9,12 +9,36 @@ let ROOTS_FOUND = 0;
 let GAMES_WON = 0;
 let SECONDS = 0;
 let MINUTES = 0;
+let CLOCK_ID = 0;
+let GAME_STARTED = false;
 // ----------------------------------------
+
+function startClock() {
+	CLOCK_ID = setInterval(incrementTime, 1000);
+}
+
+function stopClock() {
+	if (CLOCK_ID)
+		clearInterval(CLOCK_ID);
+	CLOCK_ID = 0;
+}
 
 function logicInit() {
 	keysInit();
+	document.getElementById("startBtn").addEventListener("click", () => {
+		if (!GAME_STARTED) {
+			startGame();
+			GAME_STARTED = true;
+		}
+	});
+	document.getElementById("pauseBtn").addEventListener("click", () => {
+		if (GAME_STARTED) {
+			pauseGame();
+			GAME_STARTED = false;
+		}
+
+	});
 	newGame();
-	setInterval(incrementTime, 1000);
 }
 
 function newGame() {
@@ -22,6 +46,40 @@ function newGame() {
 	refreshDisplay(GAME_ROOTS);
 	refreshKeys(GAME_ROOTS);
 	ROOTS_FOUND = 0;
+}
+
+function showPauseWindow() {
+	const pauseWindow = document.getElementById("pauseWindow")
+	pauseWindow.style.visibility = "visible";
+	pauseWindow.animate(
+		[
+			{opacity: 0},
+			{opacity: 1}
+		],
+		{duration: 500, fill: "forwards"}
+	);
+}
+
+function hidePauseWindow() {
+	const pauseWindow = document.getElementById("pauseWindow")
+	pauseWindow.animate(
+		[
+			{opacity: 1},
+			{opacity: 0}
+		],
+		{duration: 500, fill: "forwards"}
+	);
+		setTimeout(() => {pauseWindow.style.visibility = "hidden"}, 500);
+}
+
+function startGame() {
+	startClock();
+	hidePauseWindow();
+}
+
+function pauseGame() {
+	stopClock();
+	showPauseWindow();
 }
 
 function resetGame() {
@@ -67,7 +125,7 @@ function keysInit() {
 					// TODO: new game.
 					const frames = [
 						{backgroundColor: "transparent"},
-						{backgroundColor: "burlywood"},
+						{backgroundColor: "black"},
 						{backgroundColor: "transparent"}
 					];
 					document.getElementById("whiteout").animate(frames, 1000);
