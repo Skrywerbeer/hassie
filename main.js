@@ -1,7 +1,7 @@
 const MATHML_NS = "http://www.w3.org/1998/Math/MathML";
 const KEY_COUNT = 9;
-const LOWER_LIMIT = -3;
-const UPPER_LIMIT = 7;
+const LOWER_LIMIT = -9;
+const UPPER_LIMIT = 9;
 // ----------------------------------------
 // State variables.
 let GAME_ROOTS = [];
@@ -95,7 +95,7 @@ function gameWon() {
 	solvedOutput.textContent = GAMES_WON;
 }
 
-function updateClock() {
+function updateClockOutput() {
 	const output = document.getElementById("timeOutput");
 	output.textContent = (MINUTES < 10 ? "0" + MINUTES : MINUTES) +
 		":" +
@@ -110,7 +110,7 @@ function incrementTime() {
 		SECONDS = 0;
 		MINUTES++;
 	}
-	updateClock();
+	updateClockOutput();
 }
 
 function keysInit() {
