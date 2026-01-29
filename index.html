@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+	<title>QuadSVG</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="./styles.css" />
+	<script src="main.js"></script>
+  </head>
+
+  <body>
+	<!-- <svg id="filters"> -->
+	<!--   <> -->
+	<!-- </svg> -->
+	<div id="whiteout"></div>
+	<div id="stats">
+	  <output id="timeOutput" class="counter">00:00</output>
+	  <output id="solvedOutput" class="counter">0</output>
+	</div>
+	<section id="prompt">
+	  <h1>Soek Die 🥕Wortels🥕</h1>
+	  <math id="problem" display="block">
+		<mrow>
+		  <!-- <mn id="quadCoeff">1</mn> -->
+		  <msup><mi>x</mi><mn>2</mn></msup>
+		  <mo id="linearOp">+</mo>
+		  <mn id="linearCoeff">2</mn>
+		  <mi>x</mi>
+		  <mo id="constantOp">+</mo>
+		  <mn id="constant">1</mn>
+		</mrow>
+	  </math>
+	</section>
+	<section id="keys">
+	  <button id="btn1" class="key" type="button">
+		<math display="block"><mn>1</mn></math>
+	  </button>
+	  <button id="btn2" class="key" type="button">
+		<math display="block"><mn>0</mn></math>
+	  </button>
+	  <button id="btn3" class="key" type="button">
+		<math display="block"><mn>0</mn></math>
+	  </button>
+
+	  <button id="btn4" class="key" type="button">
+		<math display="block"><mn>0</mn></math>
+	  </button>
+	  <button id="btn5" class="key" type="button">
+		<math display="block"><mn>0</mn></math>
+	  </button>
+	  <button id="btn6" class="key" type="button">
+		<math display="block"><mn>0</mn></math>
+	  </button>
+
+	  <button id="btn7" class="key" type="button">
+		<math display="block"><mn>0</mn></math>
+	  </button>
+	  <button id="btn8" class="key" type="button">
+		<math display="block"><mn>0</mn></math>
+	  </button>
+	  <button id="btn9" class="key" type="button">
+		<math display="block"><mn>0</mn></math>
+	  </button>
+	</section>
+
+	<script>
+	  logicInit();
+	</script>
+
+  </body>
+</html>

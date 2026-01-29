@@ -1,0 +1,131 @@
+@font-face {
+	font-family: "NotoSansMath";
+	src: url("./fonts/NotoSansMath-Regular/NotoSansMath-Regular.ttf");
+}
+
+* {
+	color: ivory;
+	--outputHeight: 10%;
+	--promptHeight: 5%;
+	--keysHeight: 60%;
+
+	padding: 0;
+	margin: 0;
+}
+
+#filters {
+	display: none;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: black;
+}
+
+#whiteout {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: transparent;
+	pointer-events: none;
+}
+
+#stats {
+	width: 60vw;
+	/* height: var(--outputHeight); */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	justify-self: start;
+}
+
+output.counter {
+	width: 30%;
+	height: 5vh;
+	border: solid 4px ivory;
+	border-radius: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;;
+	justify-self: start;
+	font-size: 40px;
+}
+
+#prompt {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 2em;
+}
+
+#prompt h1 {
+	font-size: 60px;
+	padding-bottom: 0.8em;
+
+}
+
+#prompt math {
+	font-family: "NotoSansMath";
+	font-size:  80px;
+	padding-bottom: 1.2em;
+}
+
+#keys {
+
+	/* height: var(--keysHeight) */
+	aspect-ratio: 1;
+	border: solid 2px ivory;
+	border-radius: 32px;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 8px;
+}
+
+#keys button {
+	height: 10vh;
+	aspect-ratio: 1;
+	background-color: black;
+	border: unset;
+	border-radius: 32px;;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#keys button math {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 60px;
+}
+
+#keys button.selected {
+	border:solid 8px chocolate;
+}
+
+#keys button.selected math mn {
+	color: chocolate;
+}
+
+#keys button.selected.correct {
+	border: solid 8px olivedrab;
+}
+
+#keys button.selected.correct math mn{
+	color: olivedrab;
+}
+
+#keys button:hover {
+
+}
+
+#keys button:active {
+
+}
